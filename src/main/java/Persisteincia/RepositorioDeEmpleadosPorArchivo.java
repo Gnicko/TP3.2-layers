@@ -29,7 +29,7 @@ public class RepositorioDeEmpleadosPorArchivo implements RepositorioDeEmpleados 
                 empleados.add(e);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return empleados;
     }

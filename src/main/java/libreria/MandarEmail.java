@@ -14,9 +14,10 @@ public class MandarEmail implements EnvioDeEmail {
         try {
             new Email(empleado.obtenerCorreo(),
                     "Cumpleaños",
-                    "Feliz cumpleaños " + empleado.obtenerNombreCompleto()).enviar();
+                    "Feliz cumpleaños " +
+                            empleado.obtenerNombreCompleto()).enviar();
         } catch (SmtpException e) {
-            throw new RuntimeException("No se pudo enviar el mensaje.");
+            throw new RuntimeException("No se pudo enviar el mensaje.", e);
         }
     }
 }
